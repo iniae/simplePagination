@@ -20,6 +20,6 @@ function printContent() {
     	var start = (Pagination.page - 1) * Pagination.size;
     	var end = Math.min(data.length, Pagination.page * Pagination.size);
 	for (var i = start; i < end; i++)
-	      $('<li>', { text: `item ${data[i]}`}).appendTo('#container');
+	      $('<li>', { text: datasource [i] }).appendTo('#container');
 }
 ```
