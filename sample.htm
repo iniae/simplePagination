@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="simplePagination.js"></script>
+		<style>
+			#pagination {
+				display: inline-block;
+				margin: 0 auto;
+			}
+			#pagination a, #pagination i {
+				color: black;
+				float: left;
+				padding: 10px 20px;
+				text-decoration: none;
+			}
+			#pagination a.active {
+				background-color: ForestGreen;
+				color: white;
+			}
+			#pagination a:hover:not(.active) { background-color: LightGray; }	
+		</style>
+		<script>
+			//Sample numeric array containing the numbers 1 to 347.
+			var data = Array(347).fill(0).map((e, i) => i + 1); 
+			
+
+			$(document).ready(function() {
+				/* Initialization of the pagination. Requires 2 paramters:
+					1- The div object that will contain the paginator
+					2- The amount of items that will be managed.			
+				*/
+				Pagination.Init($('#pagination'), data.length); 				
+			});
+
+			function printContent() { //Sample function to print the result
+				$('#container').empty();
+				var start = (Pagination.page - 1) * Pagination.size;
+				var end = Math.min(data.length, Pagination.page * Pagination.size);
+				for (var i = start; i < end; i++)
+					$('<li>', { text: `item ${data[i]}`}).appendTo('#container');
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="container">
+			<!-- Content loads here -->
+		</ul>
+		<div id="pagination">
+			<!-- Paginator -->
+		</div>
+	</body>
+</html>
