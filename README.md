@@ -12,14 +12,14 @@ Pagination.Init($('#pagination'), datasource.length);
 ## Displaying The Data
 
 Sample function to print the result. 
-Use the properties 'size' and 'page' to retrieve the required range of values from the datasource.
+Use the properties **.size** and **.page** to retrieve the required range of values from the datasource.
 
 ```
 function printContent() {
-    $('#container').empty();
-    var start = (Pagination.page - 1) * Pagination.size;
-	  var end = Math.min(data.length, Pagination.page * Pagination.size);
-	  for (var i = start; i < end; i++)
+    	$('#container').empty();
+    	var start = (Pagination.page - 1) * Pagination.size;
+    	var end = Math.min(data.length, Pagination.page * Pagination.size);
+	for (var i = start; i < end; i++)
 	      $('<li>', { text: `item ${data[i]}`}).appendTo('#container');
 }
 ```
