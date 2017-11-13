@@ -1,6 +1,8 @@
 # simplePagination
 Simple Pagination using Javascript/JQuery
 
+[JSFiddle Sample](https://jsfiddle.net/Innat3/auw2coc0/)
+
 ## Initialization
 
 ```
